@@ -1184,7 +1184,7 @@ public class SettingListener implements ISetting {
      * @param bRequestResult Index请求结果标记  非0时正常  为0时需要重新请求P2P服务器
      */
     @Override
-    public void vRetGetIndexFriendStatus(int count, String[] contactIds, int[] IdProtery, int[] status, int[] DevTypes, int[] SubType, int[] DefenceState, byte bRequestResult) {
+    public void vRetGetIndexFriendStatus(int count, String[] contactIds, int[] IdProtery, int[] status, int[] DevTypes, int[] SubType, int[] DefenceState, byte bRequestResult, long[] defenceFlag) {
 
     }
 
@@ -1294,11 +1294,26 @@ public class SettingListener implements ISetting {
      * 群组消息发送结束.
      * <p>
      * 0.3.1版本之后已不再起作用,回调改为IP2P的vRetPostFromeNative返回，识别码是what=11
-     *
-     * @see IP2P#vRetPostFromeNative(int, int, int, int, String)
      */
     @Override
     public void vRetGroupMessageOver() {
 
     }
+
+    @Override
+    public void vRetLoginAnother(int LoginStatus) {
+
+    }
+
+    @Override
+    public void vRetDefenceFrag(String deviceId, int frag) {
+
+    }
+
+    @Override
+    public void ACK_vResult(String deviceId, int result) {
+
+    }
+
+
 }

@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao' // apply plugin
 apply plugin: 'org.quanqi.pgyer'
-apply plugin:'im.fir.plugin.gradle'
+apply plugin: 'im.fir.plugin.gradle'
 
 android {
     compileSdkVersion 25
@@ -84,7 +84,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.p2p.core:p2p-core:0.3.8'
+    compile 'com.p2p.core:p2p-core:0.4.3'
     compile 'me.drakeet.multitype:multitype:2.2.2'
     compile 'com.android.support:design:25.2.0'
     compile 'com.jakewharton:butterknife:8.5.1'
@@ -113,6 +113,10 @@ dependencies {
     compile 'com.github.huangdali:ELog:v1.3.3'
     //局域网搜索管理器
     compile 'com.github.jwkj:ShakManger:v1.0.1'
+    //阿里云推送
+    compile 'com.aliyun.ams:alicloud-android-push:3.0.9@aar'
+    compile 'com.aliyun.ams:alicloud-android-utdid:1.1.5.3'
+    compile 'com.aliyun.ams:alicloud-android-ut:5.0.0'
 
 }
 //

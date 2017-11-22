@@ -19,8 +19,15 @@
 ### 2.APK下载地址
 * [Gwell][fir]
 
+### 3.常见问题
+* [FAQ][FAQ]
+
 # P2P-Core 使用说明
 ### 1.版本记录
+
+#####  0.4.3 (2017.07.14)
+* 【优化】服务器返回设备信息增加布撤防状态标记
+* 【新增】新增Session2,服务于异地登录功能
 
 #####  0.3.8 (2017.04.14)
 * 【修复】本地录像异常
@@ -50,7 +57,7 @@
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     ......
-    compile 'com.p2p.core:p2p-core:0.3.8'
+    compile 'com.p2p.core:p2p-core:0.4.3'
 }
 ```    
 ### 3.使用([Web接口][HttpSend]、[P2P接口][P2PHandler]、[完整Doc文档][p2p-core doc])
@@ -166,8 +173,7 @@ public class SettingListener implements ISetting {
 使用新webAPI之后这部分会崩溃
 * 新反馈码与旧码不是一一对应的，所以旧版中发现新版没有对应时可删除对应反馈码的逻辑处理代码
 * 新反馈码含义参见下图,代码中可通过```HttpErrorCode```引用
-* [新反馈码 附录1](http://7xp6ld.com1.z0.glb.clouddn.com/0001.jpg)  
-  [新反馈码 附录2](http://7xp6ld.com1.z0.glb.clouddn.com/0002.jpg)
+* [新反馈码查询][HTTPcode]
 
 ### 9.包含的三方库
 > C/C++
@@ -184,8 +190,7 @@ public class SettingListener implements ISetting {
     * avutil
 
 ### TODO  
-*  Web API与 P2P-Core的API 分开，可单独使用
-*  增加配网部分单独依赖
+*  Http库换用RxJava 2.0
 
 <h3 id="old_version">更多历史版本</h3>
 
@@ -233,6 +238,7 @@ public class SettingListener implements ISetting {
 [SDL]:http://www.libsdl.org/ 'SDL官网'
 [x264]:http://www.videolan.org/developers/x264.html 'x264官网'
 [HttpSend]:http://doc.cloud-links.net/SDK/Android/P2PCore/com/p2p/core/P2PSpecial/HttpSend.html 'HttpSend'
+[FAQ]:http://doc.cloud-links.net/SDK/Android/FAQ/FAQ.html 'FAQ'
 [old_version]:#old_version '更多版本记录'
 [issuses]:https://github.com/dxsdyhm/GwellDemo/issues/new 'GitHub issuses'
 [download_version_1]:https://api.bintray.com/packages/dxsdyhm/maven/p2p-core/images/download.svg '版本标记图'
@@ -241,3 +247,4 @@ public class SettingListener implements ISetting {
 [soundwave]:https://github.com/jwkj/SoundwaveDemo '声波配网示例'
 [fir]:https://fir.im/smya 'APK下载地址'
 [APSendNet]:http://doc.cloud-links.net/SDK/Android/Utils/Net/Ap%E9%85%8D%E7%BD%91%E8%AF%B4%E6%98%8E.html 'AP配网链接'
+[HTTPcode]:http://cloudlinks.cn:9898/FeedbackCode/?Type=WebAPI 'gwell反馈码'
