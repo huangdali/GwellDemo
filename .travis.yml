@@ -4,13 +4,21 @@ android:
   components:
     - platform-tools
     - tools
-    - build-tools-25.0.1
-    - android-25
+    - build-tools-26.0.2
+    - android-26
     - extra-android-m2repository
 
 
 script:
-  - "./gradlew publishApkDebug"
+    - "./gradlew assembleDebug"
+    - fir login 58e870036c7798894efce2037c563ab6 #fir账号的Token
+    - fir me #打印身份信息,验证是否登录成功
+    - find ./ -name app-debug.apk
+    - fir p ./app/build/outputs/apk/app-debug.apk #自动发布应用至fir内测平台
+
+before_install:
+    - chmod +x gradlew
+    - gem install fir-cli #安装fir命令行客户端
 
 notifications:
    webhooks: https://oapi.dingtalk.com/robot/send?access_token=9e9c90524f0fa5aee0b288658fe131e203752ecfa187f8414d4bf122c9af6f00
